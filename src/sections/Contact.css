@@ -1,0 +1,58 @@
+/* src/styles/Contact.css */
+
+#contact {
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  #contact h2 {
+    font-size: 2em;
+    color: #f5e6dc; /* Match with the overall theme */
+    margin-top: 20px;
+    margin-bottom: 15px;
+  }
+  
+  #contact p {
+    color: #b8b0a8;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+  }
+  
+  .contact-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .contact-list li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 10px 0;
+    font-size: 1em;
+  }
+  
+  .contact-icon {
+    color: #f5e6dc;
+    font-size: 1.2em;
+  }
+  
+  .contact-list a {
+    color: #f5e6dc;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .contact-list a:hover {
+    color: #b8b0a8;
+    text-decoration: underline;
+  }
+  
+
+  .footer-note {
+    margin-top: 20px;
+    font-size: 0.85em;
+    color: #a8a099; /* Adjust color to match your theme */
+    text-align: center;
+    opacity: 0.8;
+  }

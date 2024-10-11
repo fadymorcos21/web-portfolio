@@ -6,7 +6,7 @@ const SocialIcons = () => {
   return (
     <div className="social-icons">
       <a
-        href="https://github.com/your-username"
+        href="https://github.com/fadymorcos21"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="GitHub"
@@ -22,7 +22,7 @@ const SocialIcons = () => {
       </a>
 
       <a
-        href="https://linkedin.com/in/your-username"
+        href="https://www.linkedin.com/in/fady-morcos-b6b507170/"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="LinkedIn"
@@ -38,19 +38,12 @@ const SocialIcons = () => {
       </a>
 
       <a
-        href="https://leetcode.com/your-username"
+        href="https://leetcode.com/fadym12/"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="LeetCode"
       >
-        <svg
-          className="icon"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-        >
-          <path d="M15.84 1.37c.26 0 .52.1.72.3l5.79 5.8c.19.18.3.43.3.71 0 .27-.11.52-.3.7l-5.79 5.8a1.026 1.026 0 0 1-1.44-1.44l3.42-3.41h-13.6c-.55 0-1-.45-1-1s.45-1 1-1h13.59l-3.41-3.42a1.015 1.015 0 0 1 .72-1.71m-1.22 14.64c.09-.03.18-.05.28-.05.23 0 .46.08.64.24l2.92 2.92c.42.39.83.82 1.2 1.27.33.41.65.83.97 1.24.22.27.27.65.13.98-.13.34-.44.55-.79.55h-5.94c-.47 0-.9-.22-1.17-.61-.3-.4-.43-.92-.38-1.45-.39.19-.81.34-1.25.42-.31.04-.61.06-.91.06-.68 0-1.34-.13-1.97-.4-.44-.18-.61-.7-.43-1.14.18-.44.7-.61 1.14-.43.98.4 2.1.37 3.05-.09.7-.35 1.26-.91 1.65-1.56.07-.12.18-.21.29-.26m-2.29-9.88c.36.12.58.47.56.84-.05.63-.17 1.28-.34 1.91-.13.45-.6.72-1.04.58-.45-.13-.71-.6-.58-1.04.14-.52.23-1.06.28-1.57.05-.55.56-.95 1.12-.82" />
-        </svg>
+        <img src="/images/leetcode.svg" alt="LeetCode" className="icon" />
       </a>
     </div>
   );

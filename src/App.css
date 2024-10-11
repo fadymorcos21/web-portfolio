@@ -1,10 +1,9 @@
-/* src/App.css */
-
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
+  background-color: #121212; /* Dark black for main background */
+  color: #e4ded7; /* Subtle beige for main text */
+  font-size: 16px;
   margin: 0;
-  background-color: #0a192f;
-  color: #a8b2d1;
   display: flex;
   justify-content: center;
 }
@@ -17,25 +16,25 @@ body {
 }
 
 .left-column {
-  position: relative;        /* Fixes the sidebar on the left */
+  position: relative;
   width: 50vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  color: #ccd6f6;
+  color: #e4ded7;
 }
 
 /* Sidebar (Left Column) */
 .sidebar {
-  position: fixed;        /* Fixes the sidebar on the left */
+  position: fixed;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  color: #ccd6f6;
+  color: #e4ded7;
 }
 
 .sidebar__inner {
@@ -48,62 +47,44 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  color: #ccd6f6;
+  color: #e4ded7;
 }
 
-
-
 .sidebar h1 {
-  font-size: 2.5em;
+  font-size: 3.2em;
   margin: 0;
-  color: #ccd6f6;
+  color: #fff5e1; /* Softer beige for title */
 }
 
 .sidebar p {
   font-size: 1.2em;
-  color: #8892b0;
+  color: #b8b0a8; /* Light beige-grey for subtitle */
   margin: 10px 0 30px;
   max-width: 300px;
 }
 
-.table-of-contents {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
-}
 
-.table-of-contents a {
-  color: #8892b0;
-  text-decoration: none;
-  font-size: 1.1em;
-  margin-bottom: 15px;
-}
-
-.table-of-contents a:hover {
-  color: #64ffda;
-}
-
-.table-of-contents a.active {
-  color: #64ffda;
-}
 
 /* Content (Right Column) */
 .content {
-  position: relative;        /* Fixes the sidebar on the left */
+  position: relative;
   top: 10vh;
-  width: 50vw;            /* Sets the main content width to the remaining half */
+  width: 50vw;
 }
 
-
-
 section {
-  border-bottom: 1px solid #233554;
+  border-bottom: 1px solid #3e3e3e; /* Darker grey divider line */
+  scroll-margin-top: 80px; /* Adjust this value to control the offset */
 }
 
 h2 {
-  color: #ccd6f6;
+  color: #fff5e1; /* Soft beige headers */
   font-size: 2em;
+  margin-bottom: 10px;
+}
+
+h3 {
+  color: #fff5e1; /* Soft beige headers */
   margin-bottom: 10px;
 }
 
@@ -119,11 +100,11 @@ html {
 #about {
   padding: 0px 0px;
   max-width: 800px;
-  color: #a8b2d1;
+  color: #dcd2c5; /* Light beige for main about text */
 }
 
 #about h2 {
-  color: #ccd6f6;
+  color: #fff5e1;
   font-size: 2.5em;
   margin-bottom: 20px;
 }
@@ -132,5 +113,25 @@ html {
   font-size: 1.1em;
   line-height: 1.6;
   margin-bottom: 20px;
-  color: #8892b0;
+  color: #b8b0a8;
+}
+
+.tags span {
+  background-color: #484848; /* Dark grey for tag background */
+  color: #e4ded7; /* Light beige for tag text */
+  font-size: 0.9em;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.tags span:hover {
+  background-color: #e4ded7;
+  color: #484848;
+}
+
+#contact  {
+  color: #fff5e1;
+  margin-bottom: 20px;
+  height: 100vh;
 }

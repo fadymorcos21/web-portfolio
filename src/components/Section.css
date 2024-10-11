@@ -1,13 +1,11 @@
-/* src/components/Section.css */
 .section {
     padding: 0px;
     margin-bottom: 150px;
     color: #a8b2d1;
-    border-bottom: 1px solid #233554;
+    border-bottom: 1px solid #2a2a2a;
 }
 
 .section h2 {
-    color: #ccd6f6;
     font-size: 2em;
     margin-top: 0;
     margin-bottom: 10px;

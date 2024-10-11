@@ -1,69 +1,56 @@
-/* src/sections/Projects.css */
-
 .projects-list {
     display: flex;
     flex-direction: column;
     gap: 20px;
-  }
-  
-  .project-card {
+    padding: 20px;
+}
+
+.project-card {
     display: flex;
     align-items: center;
-    background-color: #112240;
+    background-color: #1c1c1c; /* Deep dark grey for subtle contrast */
     border-radius: 8px;
     padding: 20px;
     text-decoration: none;
-    color: inherit;
+    color: #eae0d5; /* Off-white for readability */
     transition: transform 0.2s, box-shadow 0.3s ease-in-out;
     box-shadow: 0 0 0 transparent;
-  }
-  
-  .project-card:hover {
+}
+
+.project-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0px 4px 20px rgba(100, 255, 218, 0.3);
-  }
-  
-  .project-image {
+    box-shadow: 0px 4px 20px rgba(150, 150, 150, 0.3); /* Soft light grey glow */
+}
+
+.project-image {
     width: 120px;
     height: 80px;
     margin-right: 20px;
     border-radius: 4px;
-  }
-  
-  .project-content {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .project-content h3 {
-    color: #ccd6f6;
-    font-size: 1.5em;
-    margin: 0 0 10px;
-  }
-  
-  .project-content p {
-    font-size: 1em;
-    color: #a8b2d1;
-    margin: 0 0 15px;
-  }
-  
-  .tags {
+}
+
+.project-content p {
+    color: #b0b0b0; /* Soft grey for paragraph text */
+}
+
+.tags {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-  }
-  
-  .tags span {
-    background-color: #233554;
-    color: #64ffda;
+}
+
+/* Tags styling */
+.tags span {
+    background-color: #3c4a5b; /* Cool grey-blue to match Experience tags */
+    color: #eae0d5; /* Off-white text color */
     font-size: 0.9em;
     padding: 4px 8px;
     border-radius: 4px;
     transition: background-color 0.2s ease;
-  }
-  
-  .tags span:hover {
-    background-color: #64ffda;
-    color: #112240;
-  }
-  
+}
+
+.tags span:hover {
+    background-color: #eae0d5;
+    color: #3c4a5b;
+}
+
