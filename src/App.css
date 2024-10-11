@@ -1,38 +1,136 @@
-.App {
-  text-align: center;
+/* src/App.css */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #0a192f;
+  color: #a8b2d1;
+  display: flex;
+  justify-content: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Container for the layout */
+.app-container {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.left-column {
+  position: relative;        /* Fixes the sidebar on the left */
+  width: 50vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: flex-start;
+  align-items: flex-start;
+  color: #ccd6f6;
 }
 
-.App-link {
-  color: #61dafb;
+/* Sidebar (Left Column) */
+.sidebar {
+  position: fixed;        /* Fixes the sidebar on the left */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  color: #ccd6f6;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.sidebar__inner {
+  position: relative;
+  padding-top: 10vh;
+  height: 100vh;
+  width: 600px;
+  padding-bottom: 9vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  color: #ccd6f6;
+}
+
+
+
+.sidebar h1 {
+  font-size: 2.5em;
+  margin: 0;
+  color: #ccd6f6;
+}
+
+.sidebar p {
+  font-size: 1.2em;
+  color: #8892b0;
+  margin: 10px 0 30px;
+  max-width: 300px;
+}
+
+.table-of-contents {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.table-of-contents a {
+  color: #8892b0;
+  text-decoration: none;
+  font-size: 1.1em;
+  margin-bottom: 15px;
+}
+
+.table-of-contents a:hover {
+  color: #64ffda;
+}
+
+.table-of-contents a.active {
+  color: #64ffda;
+}
+
+/* Content (Right Column) */
+.content {
+  position: relative;        /* Fixes the sidebar on the left */
+  top: 10vh;
+  width: 50vw;            /* Sets the main content width to the remaining half */
+}
+
+
+
+section {
+  border-bottom: 1px solid #233554;
+}
+
+h2 {
+  color: #ccd6f6;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+/* Optional: Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+#about p {
+  margin: 0;
+}
+
+#about {
+  padding: 0px 0px;
+  max-width: 800px;
+  color: #a8b2d1;
+}
+
+#about h2 {
+  color: #ccd6f6;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+#about p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #8892b0;
 }

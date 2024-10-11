@@ -1,0 +1,58 @@
+/* src/sections/Experience.css */
+
+.experience-list {
+    padding: 20px;
+  }
+  
+  .experience-item {
+    background-color: #112240;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: transform 0.2s, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 0 0 transparent;
+  }
+  
+  .experience-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 4px 20px rgba(100, 255, 218, 0.3); /* Glow effect */
+  }
+  
+  .date {
+    font-size: 0.9em;
+    color: #64ffda;
+  }
+  
+  h3 {
+    color: #ccd6f6;
+    font-size: 1.5em;
+    margin: 10px 0;
+  }
+  
+  p {
+    color: #a8b2d1;
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .tags span {
+    background-color: #233554;
+    color: #64ffda;
+    font-size: 0.9em;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .tags span:hover {
+    background-color: #64ffda;
+    color: #112240;
+  }
+  
