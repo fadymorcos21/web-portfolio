@@ -4,7 +4,6 @@ import Experience from "./sections/Experience";
 import Projects from "./sections/Projects";
 import Contact from "./sections/Contact";
 import "./App.css";
-import SocialIcons from "./components/SocialIcons";
 import Sidebar from "./components/Sidebar";
 
 function App() {
