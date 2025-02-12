@@ -1,3 +1,4 @@
+/* App.css */
 body {
   font-family: 'Inter', sans-serif;
   background-color: #121212; /* Dark black for main background */
@@ -11,10 +12,11 @@ body {
 /* Container for the layout */
 .app-container {
   display: flex;
-  max-width: 1200px;
+  max-width: 1400px;
   width: 100%;
 }
 
+/* Left Column */
 .left-column {
   position: relative;
   width: 50vw;
@@ -26,6 +28,15 @@ body {
   color: #e4ded7;
 }
 
+/* Content (Right Column) */
+.content {
+  position: relative;
+  top: 10vh;
+  width: 50vw;
+  /* display: flex; */
+
+
+}
 /* Sidebar (Left Column) */
 .sidebar {
   position: fixed;
@@ -35,6 +46,8 @@ body {
   justify-content: flex-start;
   align-items: flex-start;
   color: #e4ded7;
+  padding-left: 30px;
+  /* padding-right: 30px; */
 }
 
 .sidebar__inner {
@@ -64,17 +77,10 @@ body {
 }
 
 
-
-/* Content (Right Column) */
-.content {
-  position: relative;
-  top: 10vh;
-  width: 50vw;
-}
-
 section {
   border-bottom: 1px solid #3e3e3e; /* Darker grey divider line */
   scroll-margin-top: 80px; /* Adjust this value to control the offset */
+  
 }
 
 h2 {
@@ -98,11 +104,23 @@ html {
 }
 
 #about {
-  padding: 0px 0px;
+  padding: 0px 30px 0px 2530pxpx;
   max-width: 800px;
   color: #dcd2c5; /* Light beige for main about text */
 }
 
+#experience {
+  padding: 0px 30px 0px 30px;
+
+}
+#projects {
+  padding: 0px 30px 0px 30px;
+
+}
+#contact {
+  padding: 0px 30px 0px 30px;
+
+}
 #about h2 {
   color: #fff5e1;
   font-size: 2.5em;
@@ -134,4 +152,57 @@ html {
   color: #fff5e1;
   margin-bottom: 20px;
   height: 100vh;
+}
+
+/* Responsive Styles for smaller screens */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .left-column {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Make the sidebar relative instead of fixed on mobile */
+  .sidebar {
+    position: relative;
+    height: auto;
+    width: 100%;
+  }
+
+  .sidebar__inner {
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    align-items: center;
+  }
+
+  .sidebar h1 {
+    font-size: 2.5em;
+    text-align: center;
+  }
+
+  .sidebar p {
+    font-size: 1em;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .content {
+    width: 100%;
+    top: 0;
+    padding: 20px;
+  }
+
+  section {
+    padding: 20px 0;
+    border-bottom: 1px solid #3e3e3e;
+  }
+
+  #about {
+    padding: 0 20px;
+  }
 }

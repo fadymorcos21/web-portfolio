@@ -1,3 +1,4 @@
+// Sidebar.js
 import React, { useEffect, useState } from "react";
 import "./Sidebar.css";
 import SocialIcons from "./SocialIcons";

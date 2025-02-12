@@ -6,6 +6,14 @@ import "./Projects.css";
 const Projects = () => {
   const projectData = [
     {
+      title: "Thompson Square Pharmacy",
+      description:
+        "Pharmacy website for Thompson Square Pharmacy that supports online prescription submissions, transfers, and refill requests as well as vaccinination appointment bookings. Integrated with a custom built administrative dashbaord for staff website management.",
+      link: "http://www.thompsonsquarepharmacy.ca/",
+      tags: ["React", "CSS", "Node.js", "GCP", "VMs"],
+      imageUrl: "/images/thompsonsquarepharmacy.png", // Replace with actual image path
+    },
+    {
       title: "Desktop Doctor",
       description:
         "Service booking site for computer repairs with options for in-home, drop-off, and online consultations.",
@@ -16,18 +24,10 @@ const Projects = () => {
     {
       title: "Resistance App",
       description:
-        "A digital version of 'The Resistance' game with group voting, real-time interactions, and a custom-built interface.",
+        "A digital version of 'The Resistance' game with group voting, real-time interactions, and a custom-built interface. Server currently offline.",
       link: "https://resistance-the-game.netlify.app/",
       tags: ["React Native", "Socket.IO", "Google Cloud"],
       imageUrl: "/images/resistance_app.jpg", // Replace with actual image path
-    },
-    {
-      title: "Housemates App",
-      description:
-        "An app for managing household tasks, expenses, and schedules, designed to simplify co-living.",
-      link: "#", // Replace with actual link when available
-      tags: ["React", "Firebase", "Node.js"],
-      imageUrl: "/images/housemates_app.png", // Replace with actual image path
     },
   ];
 
