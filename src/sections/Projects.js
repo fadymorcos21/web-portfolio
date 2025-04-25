@@ -6,20 +6,36 @@ import "./Projects.css";
 const Projects = () => {
   const projectData = [
     {
+      title: "We Care Clinic Pharmacy",
+      description:
+        "Integrated pharmacy and clinic platform for We Care Clinic Pharmacy featuring online appointment scheduling, prescription service requests, and secure patient messaging.",
+      link: "https://we-care-clinic-pharmacy-site.vercel.app/",
+      tags: ["Next.js", "React", "Vercel"],
+      imageUrl: "/images/wecare.jpg",
+    },
+    {
+      title: "Bond Head Pharmacy",
+      description:
+        "Custom pharmacy website for Bond Head Pharmacy enabling appointment bookings, prescription refills, transfers, and patient communication through a responsive interface.",
+      link: "https://bondheadpharmacy.com/",
+      tags: ["Next.js", "React", "Tailwind CSS", "AWS Lambda", "DynamoDB"],
+      imageUrl: "/images/BondHeadPharmacy.jpg",
+    },
+    {
       title: "Thompson Square Pharmacy",
       description:
         "Pharmacy website for Thompson Square Pharmacy that supports online prescription submissions, transfers, and refill requests as well as vaccinination appointment bookings. Integrated with a custom built administrative dashbaord for staff website management.",
       link: "http://www.thompsonsquarepharmacy.ca/",
       tags: ["React", "CSS", "Node.js", "GCP", "VMs"],
-      imageUrl: "/images/thompsonsquarepharmacy.png", // Replace with actual image path
+      imageUrl: "/images/thompsonsquarepharmacy.png",
     },
     {
       title: "Desktop Doctor",
       description:
         "Service booking site for computer repairs with options for in-home, drop-off, and online consultations.",
-      link: "https://happy-visvesvaraya-d77224.netlify.app/",
+      link: "https://desktop-doctor.store/",
       tags: ["React", "CSS", "Netlify"],
-      imageUrl: "/images/desktop_doctor.jpg", // Replace with actual image path
+      imageUrl: "/images/desktop_doctor.jpg",
     },
     {
       title: "Resistance App",
@@ -27,7 +43,7 @@ const Projects = () => {
         "A digital version of 'The Resistance' game with group voting, real-time interactions, and a custom-built interface. Server currently offline.",
       link: "https://resistance-the-game.netlify.app/",
       tags: ["React Native", "Socket.IO", "Google Cloud"],
-      imageUrl: "/images/resistance_app.jpg", // Replace with actual image path
+      imageUrl: "/images/resistance_app.jpg",
     },
   ];
 
