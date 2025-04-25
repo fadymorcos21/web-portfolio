@@ -14,20 +14,20 @@ const Projects = () => {
       imageUrl: "/images/wecare.jpg",
     },
     {
-      title: "Bond Head Pharmacy",
-      description:
-        "Custom pharmacy website for Bond Head Pharmacy enabling appointment bookings, prescription refills, transfers, and patient communication through a responsive interface.",
-      link: "https://bondheadpharmacy.com/",
-      tags: ["Next.js", "React", "Tailwind CSS", "AWS Lambda", "DynamoDB"],
-      imageUrl: "/images/BondHeadPharmacy.jpg",
-    },
-    {
       title: "Thompson Square Pharmacy",
       description:
         "Pharmacy website for Thompson Square Pharmacy that supports online prescription submissions, transfers, and refill requests as well as vaccinination appointment bookings. Integrated with a custom built administrative dashbaord for staff website management.",
       link: "http://www.thompsonsquarepharmacy.ca/",
       tags: ["React", "CSS", "Node.js", "GCP", "VMs"],
       imageUrl: "/images/thompsonsquarepharmacy.png",
+    },
+    {
+      title: "Bond Head Pharmacy",
+      description:
+        "Custom pharmacy website for Bond Head Pharmacy enabling appointment bookings, prescription refills, transfers, and patient communication through a responsive interface.",
+      link: "https://bondheadpharmacy.com/",
+      tags: ["Next.js", "React", "Tailwind CSS", "AWS Lambda", "DynamoDB"],
+      imageUrl: "/images/BondHeadPharmacy.jpg",
     },
     {
       title: "Desktop Doctor",
