@@ -30,20 +30,20 @@ const Projects = () => {
       imageUrl: "/images/BondHeadPharmacy.jpg",
     },
     {
+      title: "Resistance App",
+      description:
+        "This personal project is a digital version of 'The Resistance' game with group voting, real-time interactions, and a custom-built interface. Nginx server currently back online and hosted on Rasperri Pi 5!.",
+      link: "https://resistance-the-game.netlify.app/",
+      tags: ["React Native", "Socket.IO", "Google Cloud"],
+      imageUrl: "/images/resistance_app.jpg",
+    },
+    {
       title: "Desktop Doctor",
       description:
         "Service booking site for computer repairs with options for in-home, drop-off, and online consultations.",
       link: "https://desktop-doctor.store/",
       tags: ["React", "CSS", "Netlify"],
       imageUrl: "/images/desktop_doctor.jpg",
-    },
-    {
-      title: "Resistance App",
-      description:
-        "A digital version of 'The Resistance' game with group voting, real-time interactions, and a custom-built interface. Server currently offline.",
-      link: "https://resistance-the-game.netlify.app/",
-      tags: ["React Native", "Socket.IO", "Google Cloud"],
-      imageUrl: "/images/resistance_app.jpg",
     },
   ];
 
