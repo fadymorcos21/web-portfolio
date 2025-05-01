@@ -64,7 +64,11 @@ const Experience = () => {
             <span>JavaScript</span>
             <span>Python</span>
             <span>Media Processing</span>
-            <span>Automation</span>
+            <span>Web APIs</span>
+            <span>XML</span>
+            <span>MySQL</span>
+            <span>JSON</span>
+            <span>Postman</span>
           </div>
         </div>
 
