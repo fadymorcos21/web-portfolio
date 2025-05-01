@@ -10,7 +10,7 @@ const Projects = () => {
       description:
         "Integrated pharmacy and clinic platform for We Care Clinic Pharmacy featuring online appointment scheduling, prescription service requests, and secure patient messaging.",
       link: "https://we-care-clinic-pharmacy-site.vercel.app/",
-      tags: ["Next.js", "React", "Vercel"],
+      tags: ["Next.js", "React", "Vercel", "AWS Lambda", "DynamoDB", "NoSQL"],
       imageUrl: "/images/wecare.jpg",
     },
     {
@@ -18,7 +18,16 @@ const Projects = () => {
       description:
         "Pharmacy website for Thompson Square Pharmacy that supports online prescription submissions, transfers, and refill requests as well as vaccinination appointment bookings. Integrated with a custom built administrative dashbaord for staff website management.",
       link: "http://www.thompsonsquarepharmacy.ca/",
-      tags: ["React", "CSS", "Node.js", "GCP", "VMs"],
+      tags: [
+        "React",
+        "CSS",
+        "Node.js",
+        "GCP",
+        "VMs",
+        "SMTP",
+        "Tailwind",
+        "Nodemailer",
+      ],
       imageUrl: "/images/thompsonsquarepharmacy.png",
     },
     {
@@ -26,15 +35,30 @@ const Projects = () => {
       description:
         "Custom pharmacy website for Bond Head Pharmacy enabling appointment bookings, prescription refills, transfers, and patient communication through a responsive interface.",
       link: "https://bondheadpharmacy.com/",
-      tags: ["Next.js", "React", "Tailwind CSS", "AWS Lambda", "DynamoDB"],
+      tags: [
+        "Next.js",
+        "React",
+        "Tailwind CSS",
+        "AWS Lambda",
+        "DynamoDB",
+        "Vercel",
+      ],
       imageUrl: "/images/BondHeadPharmacy.jpg",
     },
     {
       title: "Resistance App",
       description:
-        "This personal project is a digital version of 'The Resistance' game with group voting, real-time interactions, and a custom-built interface. Nginx server currently back online and hosted on Rasperri Pi 5!.",
+        "This personal project is a digital version of 'The Resistance' game with group voting, real-time interactions, and a custom-built interface.",
       link: "https://resistance-the-game.netlify.app/",
-      tags: ["React Native", "Socket.IO", "Google Cloud"],
+      tags: [
+        "React Native",
+        "Socket.IO",
+        "GCP",
+        "Nginx",
+        "RaspberryPi 5",
+        "Netlify",
+        "Web Sockets",
+      ],
       imageUrl: "/images/resistance_app.jpg",
     },
     {
@@ -42,7 +66,7 @@ const Projects = () => {
       description:
         "Service booking site for computer repairs with options for in-home, drop-off, and online consultations.",
       link: "https://desktop-doctor.store/",
-      tags: ["React", "CSS", "Netlify"],
+      tags: ["React", "CSS", "Netlify", "Heroku"],
       imageUrl: "/images/desktop_doctor.jpg",
     },
   ];
@@ -67,6 +91,13 @@ const Projects = () => {
             <div className="project-content">
               <h3>{project.title}</h3>
               <p>{project.description}</p>
+              {index == 3 && (
+                <p>
+                  Nginx server currently back ONLINE and hosted on Rasperri Pi
+                  5!
+                </p>
+              )}
+              {/* {index == 0 && <p>In progress...</p>} */}
               <div className="tags">
                 {project.tags.map((tag, tagIndex) => (
                   <span key={tagIndex}>{tag}</span>
