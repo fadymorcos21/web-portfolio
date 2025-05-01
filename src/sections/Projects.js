@@ -102,7 +102,7 @@ const Projects = () => {
             <div className="project-content">
               <h3>{project.title}</h3>
               <p>{project.description}</p>
-              {index == 3 && (
+              {index === 3 && (
                 <p>
                   Nginx server currently back ONLINE and hosted on Rasperri Pi
                   5!
