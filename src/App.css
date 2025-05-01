@@ -1,7 +1,8 @@
 /* App.css */
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #121212; /* Dark black for main background */
+  /* background-color: #121212;  */
+  background-color: #0f0f0f; /* Dark black for main background */
   color: #e4ded7; /* Subtle beige for main text */
   font-size: 16px;
   margin: 0;
