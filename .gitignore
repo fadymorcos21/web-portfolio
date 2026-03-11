@@ -11,6 +11,8 @@
 # production
 /build
 /dist
+/.next
+/.netlify
 
 # misc
 .DS_Store
