@@ -26,24 +26,6 @@ export const clientPlatforms = [
     ctaType: "external",
   },
   {
-    id: "thompson-square",
-    title: "Thompson Square Pharmacy",
-    subtitle: "Pharmacy Web System",
-    url: "https://www.thompsonsquarepharmacy.ca/",
-    description:
-      "Prescription transfer, refill, and vaccine booking platform with a custom admin dashboard for operations.",
-    tech: [
-      "React",
-      "Node.js",
-      "MySQL",
-      "Tailwind CSS",
-      "Nodemailer",
-      "Google Cloud",
-    ],
-    image: "/images/thompsonsquarepharmacy.png",
-    ctaType: "external",
-  },
-  {
     id: "better-life-virtual-clinic",
     title: "Better Life Virtual Clinic",
     subtitle: "Virtual Care Platform",
@@ -58,7 +40,7 @@ export const clientPlatforms = [
       "Vercel",
       "Accessibility",
     ],
-    image: null,
+    image: "/images/betterlifevirtualclinic.png",
     ctaType: "external",
   },
   {
@@ -77,6 +59,24 @@ export const clientPlatforms = [
       "Vercel",
     ],
     image: "/images/BondHeadPharmacy.jpg",
+    ctaType: "external",
+  },
+  {
+    id: "thompson-square",
+    title: "Thompson Square Pharmacy",
+    subtitle: "Pharmacy Web System",
+    url: "https://www.thompsonsquarepharmacy.ca/",
+    description:
+      "Prescription transfer, refill, and vaccine booking platform with a custom admin dashboard for operations.",
+    tech: [
+      "React",
+      "Node.js",
+      "MySQL",
+      "Tailwind CSS",
+      "Nodemailer",
+      "Google Cloud",
+    ],
+    image: "/images/thompsonsquarepharmacy.png",
     ctaType: "external",
   },
 ];

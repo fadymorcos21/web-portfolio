@@ -55,7 +55,9 @@ export default function HeroSection() {
         </motion.div>
 
         <div className="pointer-events-none absolute left-6 top-6 hidden w-64 rounded-xl border border-neon-cyan/25 bg-midnight-950/80 p-4 text-left text-[11px] text-neon-cyan/80 md:block">
-          <p className="mb-2 font-semibold text-neon-cyan">deployment/config.ts</p>
+          <p className="mb-2 font-semibold text-neon-cyan">
+            deployment/config.JSX
+          </p>
           <p>const stack = [React, Node, Cloud];</p>
           <p>status = "production"</p>
           <p>uptime &gt; 99.9%</p>
