@@ -48,6 +48,17 @@ describe("Portfolio redesign", () => {
     });
   });
 
+  test("renders Story Bluff App Store link", () => {
+    render(<App />);
+
+    const link = screen.getByRole("link", { name: /app store/i });
+    expect(link).toHaveAttribute(
+      "href",
+      "https://apps.apple.com/ca/search?term=story%20bluff",
+    );
+    expect(link).toHaveAttribute("target", "_blank");
+  });
+
   test("opens and closes Story Bluff modal", async () => {
     const user = userEvent.setup();
     render(<App />);

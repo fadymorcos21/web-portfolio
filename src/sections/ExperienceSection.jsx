@@ -3,7 +3,36 @@ import { useState } from "react";
 import TechBadges from "../components/TechBadges";
 import { experiences } from "../data/portfolioData";
 
-function ExperienceCard({ item, isExpanded, onExpand, onCollapse, onToggle }) {
+function LogoBadge({ item, isPadded, isBgWhite }) {
+  return (
+    <span
+      className={`inline-flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-full border border-white/20 bg-[radial-gradient(circle_at_30%_30%,rgba(101,217,255,0.35),rgba(15,27,58,0.92))] p-1.5 shadow-neon`}
+    >
+      {item.logoImage ? (
+        <img
+          src={item.logoImage}
+          alt={`${item.company} logo`}
+          className={`h-full w-full rounded-full object-contain ${isBgWhite ? "bg-white/100" : ""} ${isPadded ? "p-1" : ""}`}
+          loading="lazy"
+        />
+      ) : (
+        <span className="font-heading text-sm font-bold text-neon-cyan">
+          {item.logo}
+        </span>
+      )}
+    </span>
+  );
+}
+
+function ExperienceCard({
+  item,
+  isExpanded,
+  onExpand,
+  onCollapse,
+  onToggle,
+  isBgWhite,
+  isPadded,
+}) {
   return (
     <article
       tabIndex={0}
@@ -27,9 +56,7 @@ function ExperienceCard({ item, isExpanded, onExpand, onCollapse, onToggle }) {
       }`}
     >
       <div className="flex items-start gap-4">
-        <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-neon-cyan/35 bg-midnight-850 font-heading text-sm font-bold text-neon-cyan">
-          {item.logo}
-        </span>
+        <LogoBadge item={item} isBgWhite={isBgWhite} isPadded={isPadded} />
         <div className="min-w-0 flex-1">
           <p className="text-xs uppercase tracking-wider text-neon-cyan/80">
             {item.dateRange}
@@ -38,13 +65,15 @@ function ExperienceCard({ item, isExpanded, onExpand, onCollapse, onToggle }) {
             {item.title}
           </h3>
           <p className="text-sm text-slate-300">
-            {item.company} · {item.employmentType}
+            {item.company} - {item.employmentType}
           </p>
           <p className="mt-0.5 text-xs text-slate-400">{item.location}</p>
         </div>
       </div>
 
-      <p className="mt-4 text-sm leading-relaxed text-slate-300">{item.summary}</p>
+      <p className="mt-4 text-sm leading-relaxed text-slate-300">
+        {item.summary}
+      </p>
 
       <AnimatePresence initial={false}>
         {isExpanded && (
@@ -91,8 +120,8 @@ export default function ExperienceSection() {
           Experience
         </h2>
         <p className="mt-2 max-w-2xl text-sm leading-relaxed text-slate-300 sm:text-base">
-          Hover or focus each role to expand responsibilities, delivery impact, and
-          technical stack.
+          Hover or focus each role to expand responsibilities, delivery impact,
+          and technical stack.
         </p>
       </motion.div>
 
@@ -118,9 +147,15 @@ export default function ExperienceSection() {
                     item={item}
                     isExpanded={isExpanded}
                     onExpand={() => setExpandedId(item.id)}
-                    onCollapse={() => setExpandedId((prev) => (prev === item.id ? null : prev))}
+                    // isPadded={["alignerr"].includes(item.id)}
+                    isBgWhite={item.id === "ev-gateway"}
+                    onCollapse={() =>
+                      setExpandedId((prev) => (prev === item.id ? null : prev))
+                    }
                     onToggle={() =>
-                      setExpandedId((prev) => (prev === item.id ? null : item.id))
+                      setExpandedId((prev) =>
+                        prev === item.id ? null : item.id,
+                      )
                     }
                   />
                 </div>

@@ -1,1 +1,3 @@
 [{"name":"next-dev","duration":5259000,"timestamp":113029807862,"id":1,"tags":{},"startTime":1773196496460,"traceId":"02fcf2232b83315e"}]
+[{"name":"next-dev","duration":867724,"timestamp":115059305620,"id":1,"tags":{},"startTime":1773198525959,"traceId":"503aecd9e3ab2e92"}]
+[{"name":"next-dev","duration":759564,"timestamp":115077698951,"id":1,"tags":{},"startTime":1773198544352,"traceId":"cf00cb7e7e54431f"}]

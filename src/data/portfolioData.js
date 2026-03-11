@@ -104,6 +104,7 @@ export const experiences = [
       "Support Engineering",
     ],
     logo: "EV",
+    logoImage: "/images/evgateway2.png",
   },
   {
     id: "alignerr",
@@ -128,6 +129,7 @@ export const experiences = [
       "Software Testing",
     ],
     logo: "A",
+    logoImage: "/images/alignerr.jpeg",
   },
   {
     id: "freelance",
@@ -154,6 +156,7 @@ export const experiences = [
       "PHP",
     ],
     logo: "F",
+    logoImage: null,
   },
   {
     id: "dataannotation",
@@ -178,6 +181,7 @@ export const experiences = [
       "Software Development",
     ],
     logo: "DA",
+    logoImage: "/images/DA4.jpg",
   },
   {
     id: "evertz",
@@ -203,6 +207,7 @@ export const experiences = [
       "Jira",
     ],
     logo: "E",
+    logoImage: "/images/evertz.png",
   },
   {
     id: "desktop-doctor",
@@ -220,6 +225,7 @@ export const experiences = [
     ],
     tech: ["React", "MySQL", "Heroku", "Web Hosting", "Customer Support"],
     logo: "DD",
+    logoImage: "/images/DD.png",
   },
 ];
 
@@ -233,6 +239,8 @@ export const apps = [
     longDescription:
       "Story Bluff is a session-based game experience where players craft prompts, bluff convincingly, and compete through fast rounds designed for high engagement.",
     tech: ["React Native", "TypeScript", "Expo", "Firebase", "UX Design"],
+    appStoreUrl: "https://apps.apple.com/in/app/story-bluff/id6748969770",
+    video: "/images/story-bluff-app-store-animation.mp4",
     image: null,
     ctaType: "modal",
     features: [

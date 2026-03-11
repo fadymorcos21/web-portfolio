@@ -1,9 +1,28 @@
 import { useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { FaApple } from "react-icons/fa";
 import { FaXmark } from "react-icons/fa6";
 import TechBadges from "./TechBadges";
 
-function StoryVisual() {
+function StoryVisual({ app }) {
+  if (app.video) {
+    return (
+      <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-midnight-900">
+        <video
+          src={app.video}
+          className="h-full max-h-[30rem] w-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+          controls
+          aria-label={`${app.title} app store preview video`}
+        />
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(2,8,25,0.45),transparent_50%)]" />
+      </div>
+    );
+  }
+
   return (
     <div className="relative rounded-2xl border border-white/15 bg-gradient-to-br from-[#111c42] via-[#1b2451] to-[#0d1636] p-4">
       <div className="absolute inset-0 rounded-2xl bg-[radial-gradient(circle_at_20%_20%,rgba(101,217,255,0.23),transparent_45%)]" />
@@ -72,7 +91,7 @@ export default function StoryBluffModal({ app, isOpen, onClose }) {
             </button>
 
             <div className="grid gap-7 md:grid-cols-[1.1fr_1fr] md:items-start">
-              <StoryVisual />
+              <StoryVisual app={app} />
               <div>
                 <p className="text-xs uppercase tracking-[0.24em] text-neon-cyan/80">
                   App / Software Project
@@ -100,6 +119,18 @@ export default function StoryBluffModal({ app, isOpen, onClose }) {
                     </li>
                   ))}
                 </ul>
+
+                {app.appStoreUrl && (
+                  <a
+                    href={app.appStoreUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-6 inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/5 px-4 py-2.5 text-sm font-semibold text-slate-100 transition hover:border-neon-cyan/55 hover:text-neon-cyan"
+                  >
+                    <FaApple className="text-base" />
+                    View on App Store
+                  </a>
+                )}
               </div>
             </div>
           </motion.dialog>

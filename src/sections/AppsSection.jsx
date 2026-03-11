@@ -1,10 +1,31 @@
 import { motion } from "framer-motion";
+import { FaApple } from "react-icons/fa";
 import { useState } from "react";
 import StoryBluffModal from "../components/StoryBluffModal";
 import TechBadges from "../components/TechBadges";
 import { apps } from "../data/portfolioData";
 
-function StoryCardVisual() {
+function StoryCardVisual({ app }) {
+  if (app.video) {
+    return (
+      <div className="relative h-full min-h-60 overflow-hidden rounded-2xl border border-white/15 bg-midnight-900">
+        <video
+          src={app.video}
+          className="h-full w-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+          aria-label={`${app.title} preview video`}
+        />
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(2,8,25,0.75),transparent_45%)]" />
+        <p className="absolute bottom-3 left-3 rounded-full border border-white/20 bg-midnight-900/70 px-3 py-1 text-xs font-medium tracking-wide text-slate-100">
+          App Store Preview
+        </p>
+      </div>
+    );
+  }
+
   return (
     <div className="relative h-full min-h-60 overflow-hidden rounded-2xl border border-white/15 bg-gradient-to-br from-[#111f4a] via-[#222053] to-[#121b3a] p-4">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(101,217,255,0.25),transparent_48%)]" />
@@ -61,7 +82,7 @@ export default function AppsSection() {
           transition={{ duration: 0.6, delay: 0.08 }}
           className="mt-8 grid items-stretch gap-5 rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl sm:p-7 lg:grid-cols-[1.1fr_1fr]"
         >
-          <StoryCardVisual />
+          <StoryCardVisual app={storyBluff} />
           <div>
             <p className="text-xs uppercase tracking-[0.24em] text-neon-cyan/75">
               Featured App
@@ -78,14 +99,27 @@ export default function AppsSection() {
               <TechBadges tech={storyBluff.tech} />
             </div>
 
-            <button
-              type="button"
-              onClick={() => setActiveApp(storyBluff)}
-              data-testid="storybluff-open"
-              className="mt-6 inline-flex items-center justify-center rounded-xl border border-neon-cyan/55 bg-neon-cyan/10 px-5 py-2.5 text-sm font-semibold text-neon-cyan transition hover:bg-neon-cyan/20"
-            >
-              View Project Details
-            </button>
+            <div className="mt-6 flex flex-wrap items-center gap-3">
+              {storyBluff.appStoreUrl && (
+                <a
+                  href={storyBluff.appStoreUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-4 py-2.5 text-sm font-semibold text-slate-100 transition hover:border-neon-cyan/55 hover:text-neon-cyan"
+                >
+                  <FaApple className="text-base" />
+                  App Store
+                </a>
+              )}
+              <button
+                type="button"
+                onClick={() => setActiveApp(storyBluff)}
+                data-testid="storybluff-open"
+                className="inline-flex items-center justify-center rounded-xl border border-neon-cyan/55 bg-neon-cyan/10 px-5 py-2.5 text-sm font-semibold text-neon-cyan transition hover:bg-neon-cyan/20"
+              >
+                View Project Details
+              </button>
+            </div>
           </div>
         </motion.article>
       </section>
