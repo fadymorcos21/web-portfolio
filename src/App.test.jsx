@@ -1,6 +1,7 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import App from "./App";
+import { apps } from "./data/portfolioData";
 
 describe("Portfolio redesign", () => {
   test("renders sections in the required order", () => {
@@ -52,10 +53,7 @@ describe("Portfolio redesign", () => {
     render(<App />);
 
     const link = screen.getByRole("link", { name: /app store/i });
-    expect(link).toHaveAttribute(
-      "href",
-      "https://apps.apple.com/ca/search?term=story%20bluff",
-    );
+    expect(link).toHaveAttribute("href", apps[0].appStoreUrl);
     expect(link).toHaveAttribute("target", "_blank");
   });
 

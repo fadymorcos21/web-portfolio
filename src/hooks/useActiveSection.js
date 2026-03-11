@@ -21,25 +21,56 @@ export function useActiveSection() {
       return undefined;
     }
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+    let frameId = null;
+    const scheduleFrame =
+      window.requestAnimationFrame ?? ((callback) => window.setTimeout(callback, 16));
+    const cancelFrame =
+      window.cancelAnimationFrame ?? ((id) => window.clearTimeout(id));
 
-        if (visible.length) {
-          setActiveSection(visible[0].target.id);
+    const updateActiveSection = () => {
+      const viewportAnchor = window.innerHeight * 0.35;
+
+      let lastPassed = observedSections[0];
+      let closest = observedSections[0];
+      let closestDistance = Number.POSITIVE_INFINITY;
+
+      observedSections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - viewportAnchor);
+
+        if (distance < closestDistance) {
+          closest = section;
+          closestDistance = distance;
         }
-      },
-      {
-        threshold: [0.25, 0.5, 0.75],
-        rootMargin: "-18% 0px -45% 0px",
-      },
-    );
 
-    observedSections.forEach((section) => observer.observe(section));
+        if (rect.top <= viewportAnchor) {
+          lastPassed = section;
+        }
+      });
 
-    return () => observer.disconnect();
+      const nextActive = (lastPassed ?? closest).id;
+      setActiveSection((prev) => (prev === nextActive ? prev : nextActive));
+    };
+
+    const requestUpdate = () => {
+      if (frameId !== null) return;
+      frameId = scheduleFrame(() => {
+        updateActiveSection();
+        frameId = null;
+      });
+    };
+
+    updateActiveSection();
+    window.addEventListener("scroll", requestUpdate, { passive: true });
+    window.addEventListener("resize", requestUpdate);
+
+    return () => {
+      window.removeEventListener("scroll", requestUpdate);
+      window.removeEventListener("resize", requestUpdate);
+      if (frameId !== null) {
+        cancelFrame(frameId);
+      }
+    };
   }, []);
 
   return { activeSection, sectionIds };

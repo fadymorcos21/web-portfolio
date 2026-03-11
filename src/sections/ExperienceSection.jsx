@@ -6,13 +6,19 @@ import { experiences } from "../data/portfolioData";
 function LogoBadge({ item, isPadded, isBgWhite }) {
   return (
     <span
-      className={`inline-flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-full border border-white/20 bg-[radial-gradient(circle_at_30%_30%,rgba(101,217,255,0.35),rgba(15,27,58,0.92))] p-1.5 shadow-neon`}
+      className={`inline-flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-full border border-white/20 ${
+        isBgWhite
+          ? "bg-white/10"
+          : "bg-[radial-gradient(circle_at_30%_30%,rgba(101,217,255,0.35),rgba(15,27,58,0.92))]"
+      } p-1.5 shadow-neon`}
     >
       {item.logoImage ? (
         <img
           src={item.logoImage}
           alt={`${item.company} logo`}
-          className={`h-full w-full rounded-full object-contain ${isBgWhite ? "bg-white/100" : ""} ${isPadded ? "p-1" : ""}`}
+          className={`h-full w-full rounded-full object-contain ${
+            isBgWhite ? "bg-white" : "bg-black/5"
+          } ${isPadded ? "p-1" : ""}`}
           loading="lazy"
         />
       ) : (
@@ -128,7 +134,7 @@ export default function ExperienceSection() {
       <div className="relative mt-10">
         <div className="absolute left-4 top-0 h-full w-[2px] bg-gradient-to-b from-neon-cyan/30 via-neon-cyan to-neon-blue/25 md:left-1/2 md:-translate-x-1/2" />
 
-        <div className="space-y-6">
+        <div className="space-y-4 md:space-y-0">
           {experiences.map((item, index) => {
             const isLeft = index % 2 === 0;
             const isExpanded = expandedId === item.id;
@@ -136,7 +142,11 @@ export default function ExperienceSection() {
             return (
               <div
                 key={item.id}
-                className="relative md:grid md:grid-cols-[1fr_52px_1fr] md:items-start"
+                className={`relative ${
+                  isExpanded ? "z-20" : "z-10"
+                } md:grid md:grid-cols-[1fr_52px_1fr] md:items-start ${
+                  index > 0 ? "md:-mt-10 lg:-mt-14" : ""
+                }`}
               >
                 <div
                   className={`pl-8 md:col-span-1 md:pl-0 ${
@@ -147,7 +157,7 @@ export default function ExperienceSection() {
                     item={item}
                     isExpanded={isExpanded}
                     onExpand={() => setExpandedId(item.id)}
-                    // isPadded={["alignerr"].includes(item.id)}
+                    isPadded={["alignerr"].includes(item.id)}
                     isBgWhite={item.id === "ev-gateway"}
                     onCollapse={() =>
                       setExpandedId((prev) => (prev === item.id ? null : prev))

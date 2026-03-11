@@ -1,5 +1,6 @@
 import BackgroundAtmosphere from "./components/BackgroundAtmosphere";
 import Navbar from "./components/Navbar";
+import SideToc from "./components/SideToc";
 import AboutSection from "./sections/AboutSection";
 import AppsSection from "./sections/AppsSection";
 import ClientPlatformsSection from "./sections/ClientPlatformsSection";
@@ -13,6 +14,7 @@ export default function App() {
       <BackgroundAtmosphere />
       <div className="relative z-10">
         <Navbar />
+        <SideToc />
         <main>
           <HeroSection />
           <ClientPlatformsSection />

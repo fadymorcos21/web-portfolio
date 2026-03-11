@@ -12,17 +12,17 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative mx-auto w-full max-w-[1360px] px-4 pb-16 pt-20 sm:px-6 sm:pt-24 lg:px-10"
+      className="relative mx-auto w-full max-w-[1360px] px-4 pb-4 pt-12 sm:px-6 sm:pb-6 sm:pt-14 lg:px-10 lg:pb-0 lg:pt-12"
     >
-      <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-midnight-900/70 px-6 py-16 shadow-neon sm:px-10 lg:px-16">
-        <div className="absolute -left-16 top-8 h-52 w-52 rounded-full bg-neon-cyan/20 blur-3xl" />
-        <div className="absolute -right-20 bottom-0 h-60 w-60 rounded-full bg-neon-blue/20 blur-3xl" />
+      <div className="relative min-h-[50vh] sm:min-h-[54vh] lg:min-h-[58vh]">
+        <div className="absolute -left-20 top-0 h-56 w-56 rounded-full bg-neon-cyan/20 blur-3xl" />
+        <div className="absolute -right-20 bottom-0 h-64 w-64 rounded-full bg-neon-blue/20 blur-3xl" />
 
         <motion.div
           initial={{ opacity: 0, y: 22 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65, ease: "easeOut" }}
-          className="relative z-10 mx-auto max-w-3xl text-center"
+          className="relative z-10 mx-auto flex min-h-[50vh] max-w-3xl flex-col items-center justify-center text-center sm:min-h-[54vh] lg:min-h-[58vh]"
         >
           <p className="font-heading text-xs uppercase tracking-[0.25em] text-neon-cyan/80 sm:text-sm">
             Portfolio
@@ -33,10 +33,10 @@ export default function HeroSection() {
           <p className="mt-5 text-base font-medium text-slate-200 sm:text-2xl">
             {hero.roles.join(" • ")}
           </p>
-          <p className="mx-auto mt-6 max-w-2xl text-sm leading-relaxed text-slate-300 sm:text-lg">
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-slate-300 sm:text-lg">
             {hero.intro}
           </p>
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <button
               type="button"
               onClick={() => scrollToSection("client-platforms")}
@@ -54,25 +54,25 @@ export default function HeroSection() {
           </div>
         </motion.div>
 
-        <div className="pointer-events-none absolute left-6 top-6 hidden w-64 rounded-xl border border-neon-cyan/25 bg-midnight-950/80 p-4 text-left text-[11px] text-neon-cyan/80 md:block">
+        <div className="pointer-events-none absolute left-0 top-3 hidden w-64 rounded-xl border border-neon-cyan/25 bg-midnight-950/80 p-4 text-left text-[11px] text-neon-cyan/80 lg:block">
           <p className="mb-2 font-semibold text-neon-cyan">
-            deployment/config.JSX
+            deployment/config.jsx
           </p>
           <p>const stack = [React, Node, Cloud];</p>
           <p>status = "production"</p>
           <p>uptime &gt; 99.9%</p>
         </div>
 
-        <div className="pointer-events-none absolute bottom-8 right-6 hidden w-60 rounded-xl border border-neon-blue/30 bg-midnight-950/75 p-4 md:block">
-          <div className="grid grid-cols-3 gap-2">
+        {/* <div className="pointer-events-none absolute bottom-6 right-0 hidden w-60 rounded-xl border border-neon-blue/30 bg-midnight-950/75 p-4 lg:block"> */}
+        {/* <div className="grid grid-cols-3 gap-2">
             {Array.from({ length: 6 }).map((_, index) => (
               <span
                 key={index}
                 className="h-6 rounded-md border border-neon-blue/35 bg-neon-blue/10"
               />
             ))}
-          </div>
-        </div>
+          </div> */}
+        {/* </div> */}
       </div>
     </section>
   );

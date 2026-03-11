@@ -36,20 +36,22 @@ function ClientPreview({ image, title }) {
 
 function ClientCard({ platform }) {
   return (
-    <article className="group h-full rounded-2xl border border-white/10 bg-white/5 p-3 backdrop-blur-xl">
+    <article className="group h-full rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-xl lg:p-5">
       <div className="overflow-hidden rounded-xl border border-white/10 bg-midnight-900/80">
-        <div className="h-40 sm:h-44">
+        <div className="h-44 sm:h-48 lg:h-52">
           <ClientPreview image={platform.image} title={platform.title} />
         </div>
       </div>
       <div className="mt-4 space-y-3 px-1 pb-2">
         <div>
-          <p className="text-lg font-semibold text-slate-50">{platform.title}</p>
+          <p className="text-lg font-semibold text-slate-50 lg:text-xl">
+            {platform.title}
+          </p>
           <p className="text-xs uppercase tracking-wider text-neon-cyan/80">
             {platform.subtitle}
           </p>
         </div>
-        <p className="min-h-[4.2rem] text-sm leading-relaxed text-slate-300">
+        <p className="min-h-[4.8rem] text-sm leading-relaxed text-slate-300 lg:min-h-[5.2rem]">
           {platform.description}
         </p>
         <TechBadges tech={platform.tech} />
@@ -70,7 +72,7 @@ export default function ClientPlatformsSection() {
   return (
     <section
       id="client-platforms"
-      className="mx-auto w-full max-w-[1360px] scroll-mt-28 px-4 py-14 sm:px-6 lg:px-10"
+      className="mx-auto w-full max-w-[1480px] scroll-mt-28 px-4 pb-14 pt-2 sm:px-6 sm:pt-3 lg:px-10"
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -91,7 +93,7 @@ export default function ClientPlatformsSection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ amount: 0.2, once: true }}
         transition={{ duration: 0.6, delay: 0.08 }}
-        className="mt-8 rounded-3xl border border-white/10 bg-midnight-900/55 p-5 backdrop-blur-xl sm:p-7"
+        className="mt-6 rounded-3xl border border-white/10 bg-midnight-900/55 p-5 backdrop-blur-xl sm:p-7"
       >
         <Swiper
           modules={[Navigation, Pagination]}
@@ -99,11 +101,12 @@ export default function ClientPlatformsSection() {
           pagination={{ clickable: true }}
           spaceBetween={18}
           breakpoints={{
-            320: { slidesPerView: 1.1 },
-            640: { slidesPerView: 1.6 },
-            900: { slidesPerView: 2.2 },
-            1150: { slidesPerView: 3.1 },
-            1460: { slidesPerView: 4 },
+            320: { slidesPerView: 1.08, spaceBetween: 16 },
+            640: { slidesPerView: 1.55, spaceBetween: 16 },
+            900: { slidesPerView: 2.2, spaceBetween: 18 },
+            1150: { slidesPerView: 3.12, spaceBetween: 20 },
+            1360: { slidesPerView: 3.7, spaceBetween: 24 },
+            1550: { slidesPerView: 4, spaceBetween: 28 },
           }}
           className="client-swiper pb-11"
         >
