@@ -1,18 +1,13 @@
 import { motion } from "framer-motion";
 import { useMemo } from "react";
 import { useActiveSection } from "../hooks/useActiveSection";
+import { scrollToSection } from "../utils/scrollToSection";
 
 const tocItems = [
   { id: "client-platforms", label: "Client Work", short: "C" },
   { id: "experience", label: "Experience", short: "E" },
   { id: "apps", label: "Projects", short: "P" },
 ];
-
-function scrollToSection(id) {
-  const section = document.getElementById(id);
-  if (!section) return;
-  section.scrollIntoView({ behavior: "smooth", block: "start" });
-}
 
 export default function SideToc() {
   const { activeSection } = useActiveSection();

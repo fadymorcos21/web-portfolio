@@ -1,12 +1,6 @@
 import { motion } from "framer-motion";
 import { hero } from "../data/portfolioData";
-
-function scrollToSection(id) {
-  const section = document.getElementById(id);
-  if (section) {
-    section.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
-}
+import { scrollToSection } from "../utils/scrollToSection";
 
 export default function HeroSection() {
   return (

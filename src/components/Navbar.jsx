@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { hero } from "../data/portfolioData";
 import { useActiveSection } from "../hooks/useActiveSection";
+import { scrollToSection } from "../utils/scrollToSection";
 
 const navItems = [
   { id: "hero", label: "Portfolio" },
@@ -10,12 +11,6 @@ const navItems = [
   { id: "about", label: "About" },
   { id: "contact", label: "Contact" },
 ];
-
-function scrollToSection(id) {
-  const element = document.getElementById(id);
-  if (!element) return;
-  element.scrollIntoView({ behavior: "smooth", block: "start" });
-}
 
 export default function Navbar() {
   const { activeSection } = useActiveSection();
