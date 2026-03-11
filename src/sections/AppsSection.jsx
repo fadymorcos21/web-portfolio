@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
 import { FaApple } from "react-icons/fa";
-import { useState } from "react";
-import StoryBluffModal from "../components/StoryBluffModal";
 import TechBadges from "../components/TechBadges";
 import { apps } from "../data/portfolioData";
 
@@ -11,7 +9,7 @@ function StoryCardVisual({ app }) {
       <div className="relative h-full min-h-60 overflow-hidden rounded-2xl border border-white/15 bg-midnight-900">
         <video
           src={app.video}
-          className="h-full w-full object-cover"
+          className="h-100 w-100 object-cover"
           autoPlay
           muted
           loop
@@ -51,84 +49,74 @@ function StoryCardVisual({ app }) {
 }
 
 export default function AppsSection() {
-  const [activeApp, setActiveApp] = useState(null);
   const storyBluff = apps[0];
 
   return (
-    <>
-      <section
-        id="apps"
-        className="mx-auto w-full max-w-[1360px] scroll-mt-28 px-4 py-14 sm:px-6 lg:px-10"
+    <section
+      id="apps"
+      className="mx-auto w-full max-w-[1360px] scroll-mt-28 px-4 py-14 sm:px-6 lg:px-10"
+    >
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ amount: 0.25, once: true }}
+        transition={{ duration: 0.55 }}
       >
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ amount: 0.25, once: true }}
-          transition={{ duration: 0.55 }}
-        >
-          <h2 className="font-heading text-3xl font-bold text-slate-100 sm:text-4xl">
-            Apps / Software Projects
-          </h2>
-          <p className="mt-2 text-sm leading-relaxed text-slate-300 sm:text-base">
-            A focused showcase for the current flagship app. Additional projects can
-            be dropped into the shared data file at any time.
+        <h2 className="font-heading text-3xl font-bold text-slate-100 sm:text-4xl">
+          Apps / Software Projects
+        </h2>
+        <p className="mt-2 text-sm leading-relaxed text-slate-300 sm:text-base">
+          A focused showcase for the current flagship app. Additional projects
+          can be dropped into the shared data file at any time.
+        </p>
+      </motion.div>
+
+      <motion.article
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ amount: 0.2, once: true }}
+        transition={{ duration: 0.6, delay: 0.08 }}
+        className="mt-8 grid items-stretch gap-5 rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl sm:p-7 lg:grid-cols-[1.1fr_1fr]"
+      >
+        <StoryCardVisual app={storyBluff} />
+        <div>
+          <p className="text-xs uppercase tracking-[0.24em] text-neon-cyan/75">
+            Featured App
           </p>
-        </motion.div>
+          <h3 className="mt-2 font-heading text-3xl font-bold text-white">
+            {storyBluff.title}
+          </h3>
+          <p className="mt-1 text-sm text-neon-cyan/80">{storyBluff.subtitle}</p>
+          <p className="mt-4 text-sm leading-relaxed text-slate-300">
+            {storyBluff.longDescription}
+          </p>
 
-        <motion.article
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ amount: 0.2, once: true }}
-          transition={{ duration: 0.6, delay: 0.08 }}
-          className="mt-8 grid items-stretch gap-5 rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl sm:p-7 lg:grid-cols-[1.1fr_1fr]"
-        >
-          <StoryCardVisual app={storyBluff} />
-          <div>
-            <p className="text-xs uppercase tracking-[0.24em] text-neon-cyan/75">
-              Featured App
-            </p>
-            <h3 className="mt-2 font-heading text-3xl font-bold text-white">
-              {storyBluff.title}
-            </h3>
-            <p className="mt-1 text-sm text-neon-cyan/80">{storyBluff.subtitle}</p>
-            <p className="mt-4 text-sm leading-relaxed text-slate-300">
-              {storyBluff.description}
-            </p>
-
-            <div className="mt-5">
-              <TechBadges tech={storyBluff.tech} />
-            </div>
-
-            <div className="mt-6 flex flex-wrap items-center gap-3">
-              {storyBluff.appStoreUrl && (
-                <a
-                  href={storyBluff.appStoreUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-4 py-2.5 text-sm font-semibold text-slate-100 transition hover:border-neon-cyan/55 hover:text-neon-cyan"
-                >
-                  <FaApple className="text-base" />
-                  App Store
-                </a>
-              )}
-              <button
-                type="button"
-                onClick={() => setActiveApp(storyBluff)}
-                data-testid="storybluff-open"
-                className="inline-flex items-center justify-center rounded-xl border border-neon-cyan/55 bg-neon-cyan/10 px-5 py-2.5 text-sm font-semibold text-neon-cyan transition hover:bg-neon-cyan/20"
-              >
-                View Project Details
-              </button>
-            </div>
+          <div className="mt-5">
+            <TechBadges tech={storyBluff.tech} />
           </div>
-        </motion.article>
-      </section>
 
-      <StoryBluffModal
-        app={activeApp ?? storyBluff}
-        isOpen={Boolean(activeApp)}
-        onClose={() => setActiveApp(null)}
-      />
-    </>
+          <ul className="mt-5 space-y-2 text-sm text-slate-300">
+            {storyBluff.features.map((feature) => (
+              <li key={feature} className="flex items-start gap-2">
+                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-neon-cyan/80" />
+                <span>{feature}</span>
+              </li>
+            ))}
+          </ul>
+
+          {storyBluff.appStoreUrl && (
+            <a
+              href={storyBluff.appStoreUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-4 py-2.5 text-sm font-semibold text-slate-100 transition hover:border-neon-cyan/55 hover:text-neon-cyan"
+            >
+              <FaApple className="text-base" />
+              View on App Store
+            </a>
+          )}
+        </div>
+      </motion.article>
+    </section>
   );
 }

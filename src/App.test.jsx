@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import App from "./App";
 import { apps } from "./data/portfolioData";
@@ -57,17 +57,13 @@ describe("Portfolio redesign", () => {
     expect(link).toHaveAttribute("target", "_blank");
   });
 
-  test("opens and closes Story Bluff modal", async () => {
-    const user = userEvent.setup();
+  test("renders Story Bluff details inline without modal trigger", () => {
     render(<App />);
-
-    await user.click(screen.getByTestId("storybluff-open"));
-    expect(screen.getByRole("dialog", { name: /story bluff/i })).toBeInTheDocument();
-
-    await user.click(screen.getByLabelText(/close story bluff details/i));
-    await waitFor(() => {
-      expect(screen.queryByRole("dialog", { name: /story bluff/i })).not.toBeInTheDocument();
-    });
+    expect(
+      screen.getByText(/node\.js \+ redis backend with distributed event handling/i),
+    ).toBeInTheDocument();
+    expect(screen.queryByTestId("storybluff-open")).not.toBeInTheDocument();
+    expect(screen.queryByRole("dialog", { name: /story bluff/i })).not.toBeInTheDocument();
   });
 
   test("experience cards expand on hover/focus and support keyboard toggle", async () => {
